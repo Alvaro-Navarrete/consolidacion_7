@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <h1>Ingresar los Datos del Laboratorio</h1>
+{% endblock title %}
+
+{% block content %}
+
+    <form action="/ingresar/" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="">Nombre</label>
+            <input type="text" name="nombre">
+        </div>
+        <div>
+            <label for="">Ciudad</label>
+            <input type="text" name="ciudad">
+        </div>
+        <div>
+            <label for="">Pais</label>
+            <input type="text" name="pais">
+        </div>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <a href="{% url "index" %}"><-- Ir a la pagina de inicio</a>
+
+
+{% endblock content %}

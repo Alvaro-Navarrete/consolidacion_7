@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <p>Estas seguro que desea eliminar el laboratorio: {{laboratorio.nombre}} </p>
+
+    <a href="{% url "mostrar" %}"><-- Retornar</a>
+
+    <form action="{% url "eliminar" %}?id={{laboratorio.id}}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Confirmar">
+    </form>
+
+
+{% endblock content %}

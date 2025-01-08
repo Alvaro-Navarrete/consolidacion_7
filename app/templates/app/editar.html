@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <h1>Actualizar Laboratorio</h1>
+{% endblock title %}
+
+{% block content %}
+
+    <form action="{% url "editar" %}?id={{laboratorio.id}}" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="">Nombre</label>
+            <input type="text" name="nombre" value="{{laboratorio.nombre}}">
+        </div>
+        <div>
+            <label for="">Ciudad</label>
+            <input type="text" name="ciudad" value="{{laboratorio.ciudad}}">
+        </div>
+        <div>
+            <label for="">Pais</label>
+            <input type="text" name="pais" value="{{laboratorio.pais}}">
+        </div>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <a href="{% url "mostrar" %}"><-- Retornar</a>
+
+
+{% endblock content %}
